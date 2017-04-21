@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{background: #000;color:#fff;font-size:14px;}
+	</style>
+	<script>
+		function toDou(n){
+			if(n<10){
+				return "0"+n;
+			}else{
+				return ""+n;
+			}
+		}
+
+		window.onload=function(){
+			function time(){
+				var oImg = document.getElementsByTagName('img');
+				var oDate = new Date();
+				var str = toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+
+				for(var i = 0;i<str.length;i++){
+					oImg[i].src="img/"+str.charAt(i)+".png";
+				}
+			};
+
+			time();
+			setInterval(time,1000);
+
+
+
+		}
+	</script>
+</head>
+<body>
+	<img src="img/0.png" alt="">
+	<img src="img/0.png" alt="">
+	:
+	<img src="img/0.png" alt="">
+	<img src="img/0.png" alt="">
+	:
+	<img src="img/0.png" alt="">
+	<img src="img/0.png" alt="">
+</body>
+</html>
